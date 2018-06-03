@@ -5,21 +5,19 @@ namespace Core;
 /**
  * Router
  *
- * PHP Version 7.2.5
+ * PHP version 5.4
  */
 class Router
 {
 
     /**
      * Associative array of routes (the routing table)
-     *
      * @var array
      */
     protected $routes = [];
 
     /**
      * Parameters from the matched route
-     *
      * @var array
      */
     protected $params = [];
@@ -111,7 +109,6 @@ class Router
         if ($this->match($url)) {
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);
-            //$controller = "App\Controllers\\$controller";
             $controller = $this->getNamespace() . $controller;
 
             if (class_exists($controller)) {
@@ -124,13 +121,16 @@ class Router
                     $controller_object->$action();
 
                 } else {
-                    echo "Method $action (in controller $controller) not found";
+                    //echo "Method $action (in controller $controller) not found";
+                    throw new \Exception("Method $action (in controller $controller) not found");
                 }
             } else {
-                echo "Controller class $controller not found";
+                //echo "Controller class $controller not found";
+                throw new \Exception("Controller class $controller not found");
             }
         } else {
-            echo 'No route matched.';
+            //echo 'No route matched.';
+            throw new \Exception('No route matched.');
         }
     }
 

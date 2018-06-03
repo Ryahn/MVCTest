@@ -1,16 +1,11 @@
 {
-    "name": "PTH",
-    "description": "Website for PTH",
     "require": {
-        "twig/twig": "^2.4",
-        "monolog/monolog": "^1.23",
-        "phpmailer/phpmailer": "^6.0",
-        "odan/twig-assets": "^1.2"
+        "twig/twig": "~1.0"
     },
     "autoload": {
         "psr-4": {
-            "Core\\": "Core/",
-            "App\\": "App/"
+             "Core\\": "Core/",
+             "App\\": "App/"
         }
     }
 }

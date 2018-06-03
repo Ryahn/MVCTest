@@ -1,0 +1,8 @@
+backup
+pth.code-workspace
+vendor
+vendor/*
+public/cache
+logs
+Core/.settings.php
+Bot/node_modules

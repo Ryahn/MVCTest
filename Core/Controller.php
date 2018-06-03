@@ -5,14 +5,13 @@ namespace Core;
 /**
  * Base controller
  *
- * PHP Version 7.2.5
+ * PHP version 5.4
  */
 abstract class Controller
 {
 
     /**
      * Parameters from the matched route
-     *
      * @var array
      */
     protected $route_params = [];
@@ -20,7 +19,7 @@ abstract class Controller
     /**
      * Class constructor
      *
-     * @param array $route_params Parameters from the route
+     * @param array $route_params  Parameters from the route
      *
      * @return void
      */
@@ -35,8 +34,8 @@ abstract class Controller
      * filter methods on action methods. Action methods need to be named
      * with an "Action" suffix, e.g. indexAction, showAction etc.
      *
-     * @param string $name Method name
-     * @param array  $args Arguments passed to the method
+     * @param string $name  Method name
+     * @param array $args Arguments passed to the method
      *
      * @return void
      */
@@ -50,7 +49,8 @@ abstract class Controller
                 $this->after();
             }
         } else {
-            echo "Method $method not found in controller " . get_class($this);
+            //echo "Method $method not found in controller " . get_class($this);
+            throw new \Exception("Method $method not found in controller " . get_class($this));
         }
     }
 

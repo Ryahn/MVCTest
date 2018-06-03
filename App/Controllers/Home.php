@@ -7,7 +7,7 @@ use \Core\View;
 /**
  * Home controller
  *
- * PHP Version 7.2.5
+ * PHP version 5.4
  */
 class Home extends \Core\Controller
 {
@@ -46,15 +46,9 @@ class Home extends \Core\Controller
             'colours' => ['red', 'green', 'blue']
         ]);
         */
-        // $config = new Config();
-        // $config->load('/Core/.settings.php');
-
-        // $db = new Database();
-        View::renderTemplate(
-            'Home/index.html.twig', [
-            'name'    => 'test',
+        View::renderTemplate('Home/index.html', [
+            'name'    => 'Dave',
             'colours' => ['red', 'green', 'blue']
-            ]
-        );
+        ]);
     }
 }

@@ -3,14 +3,13 @@
 namespace App\Controllers;
 
 use \Core\View;
-use App\Models\Post;
 
 /**
  * Posts controller
  *
  * PHP version 5.4
  */
-class Posts extends \Core\Controller
+class User extends \Core\Controller
 {
 
     /**
@@ -22,9 +21,7 @@ class Posts extends \Core\Controller
     {
         // $posts = Post::getAll();
 
-        View::renderTemplate('Posts/index.html', [
-            'posts' => $posts
-        ]);
+        View::renderTemplate('User/index.html');
     }
 
     /**
